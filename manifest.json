@@ -4,8 +4,8 @@
   "manifest_version": 1,
   "action": {
     "title": "Technique Search",
-    "icon": "icon.svg",
-    "popover": "index.html",
+    "icon": "https://archerpofmc.github.io/obr-list/icon.svg",
+    "popover": "https://archerpofmc.github.io/obr-list/index.html",
     "height": 560,
     "width": 400
   }
