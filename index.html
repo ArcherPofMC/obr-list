@@ -40,7 +40,7 @@
   <button class="tab" data-tab="abilities">Class Abilities</button>
 </div>
 <div id="search-bar">
-  <input id="search-input" type="text" placeholder="Search\u2026" autocomplete="off" />
+  <input id="search-input" type="text" placeholder="Search…" autocomplete="off" />
   <button id="clear-btn" title="Clear">✕</button>
 </div>
 <div id="results-area">
@@ -62,7 +62,7 @@ const TECHNIQUES=[
   {name:"Mind Warp",rank:"Prime",classes:"Thaumaturge",castTime:"Action",range:"60 ft.",effect:"INT save or 1d6 psychic + subtract 1d4 from next save.",notes:"Upgrade: +1d6 at lv5/11/17"},
   {name:"Missive",rank:"Prime",classes:"Thaumaturge",castTime:"Action",range:"120 ft.",effect:"Whisper message to target; target can reply. Blocked by lead/1ft stone.",notes:""},
   {name:"Power Bolt",rank:"Prime",classes:"Thaumaturge",castTime:"Action",range:"120 ft.",effect:"Ranged tech attack. 1d10 force.",notes:"Upgrade: +1d10 at lv5/11/17"},
-  {name:"Push",rank:"Prime",classes:"Thaumaturge",castTime:"Action",range:"30 ft.",effect:"STR save or pushed 10ft. Also pushes objects \u226450 lb.",notes:""},
+  {name:"Push",rank:"Prime",classes:"Thaumaturge",castTime:"Action",range:"30 ft.",effect:"STR save or pushed 10ft. Also pushes objects ≤50 lb.",notes:""},
   {name:"Shu",rank:"Prime",classes:"Savant",castTime:"Action",range:"Touch",effect:"Conc, 1 min. Target reduces chosen damage type by 1d4 (1/turn).",notes:""},
   {name:"Spirit Lance",rank:"Prime",classes:"Savant",castTime:"Action",range:"60 ft.",effect:"Ranged tech attack. 1d8 spirit. Ignores half/three-quarters cover.",notes:"Upgrade: +1d8 at lv5/11/17"},
   {name:"Stabilize",rank:"Prime",classes:"Savant",castTime:"Action",range:"15 ft.",effect:"Creature at 0 HP becomes stable.",notes:"Upgrade: range increases at lv5/11/17"},
@@ -111,7 +111,7 @@ const TECHNIQUES=[
   {name:"Flare",rank:"2",classes:"Guardian",castTime:"Sp. Action",range:"Self",effect:"Conc, 1 min. On melee hit: +2d6 radiant. Target sheds light, adv to hit, can't be invisible.",notes:"Boost: +1d6/rank. Req: melee mastery"},
   {name:"Gaj",rank:"2",classes:"Savant",castTime:"Action",range:"90 ft.",effect:"Ranged tech attack: 3d6 lightning (5d6 vs android/automaton/robot).",notes:"Boost: +2d6 android, +1d6 other/rank"},
   {name:"Grafto",rank:"2",classes:"Thaumaturge",castTime:"Action",range:"60 ft.",effect:"CON save: 3d8 force or half in 10ft sphere.",notes:"Boost: +1d8/rank"},
-  {name:"Grants",rank:"2",classes:"Savant, Thaumaturge",castTime:"Action",range:"Self (30ft line)",effect:"DEX save: 3d8 radiant or half in 30ft\u00d75ft line.",notes:"Boost: +1d8/rank"},
+  {name:"Grants",rank:"2",classes:"Savant, Thaumaturge",castTime:"Action",range:"Self (30ft line)",effect:"DEX save: 3d8 radiant or half in 30ft×5ft line.",notes:"Boost: +1d8/rank"},
   {name:"Lock",rank:"2",classes:"Thaumaturge",castTime:"Action",range:"Touch",effect:"Until dispelled. Lock door/container. Can't be unlocked mundanely.",notes:"Comp: 250 mst"},
   {name:"Open",rank:"2",classes:"Thaumaturge",castTime:"Action",range:"60 ft.",effect:"Unlock mundane locks, suppress Lock for 10 min. Loud knock (300ft).",notes:""},
   {name:"Phase",rank:"2",classes:"Thaumaturge",castTime:"Sp. Action",range:"Self",effect:"Teleport up to 30ft.",notes:""},
@@ -145,10 +145,10 @@ const TECHNIQUES=[
   {name:"Ner",rank:"3",classes:"Mystic, Savant, Thaumaturge",castTime:"Action",range:"30 ft.",effect:"Conc, 1 min. Double speed, +2 DFP, adv DEX saves, extra action (limited). Lethargy after.",notes:""},
   {name:"Power Aura",rank:"3",classes:"Guardian",castTime:"Action",range:"Self (30ft sphere)",effect:"Conc, 1 min. You + allies: +1d4 spirit dmg on weapon hits.",notes:""},
   {name:"Power Brand",rank:"3",classes:"Guardian",castTime:"Action",range:"Touch",effect:"Conc, 1 hr. Weapon: +1 atk power + 1d4 cold/fire/lightning/radiant.",notes:"Boost: +2 atk, 2d4 at R5"},
-  {name:"Rever",rank:"3",classes:"Guardian, Hunter, Savant",castTime:"Action",range:"Touch",effect:"Revive creature dead \u22641 min with 1 HP. No missing body parts.",notes:"Comp: 3,000 mst"},
+  {name:"Rever",rank:"3",classes:"Guardian, Hunter, Savant",castTime:"Action",range:"Touch",effect:"Revive creature dead ≤1 min with 1 HP. No missing body parts.",notes:"Comp: 3,000 mst"},
   {name:"Sa-Gen",rank:"3",classes:"Savant",castTime:"Action",range:"Self (15ft sphere)",effect:"Conc, 10 min. Aura: half speed, WIS save: 3d8 poison + poisoned.",notes:"Boost: +1d8/rank"},
   {name:"Sa-Shu",rank:"3",classes:"Hunter, Mystic, Savant, Thaumaturge",castTime:"Action",range:"Touch",effect:"Conc, 1 hr. Resist one type: acid/cold/fire/lightning/radiant.",notes:""},
-  {name:"Shiza",rank:"3",classes:"Guardian, Hunter, Savant, Thaumaturge",castTime:"Action",range:"120 ft.",effect:"End effects of rank 3 or lower technique. Higher: check DC 10+rank.",notes:"Boost: auto-end \u2264 cast rank"},
+  {name:"Shiza",rank:"3",classes:"Guardian, Hunter, Savant, Thaumaturge",castTime:"Action",range:"120 ft.",effect:"End effects of rank 3 or lower technique. Higher: check DC 10+rank.",notes:"Boost: auto-end ≤ cast rank"},
   {name:"Translate",rank:"3",classes:"Savant, Thaumaturge",castTime:"Action",range:"Touch",effect:"1 hr. Understand all languages. Others understand target's speech.",notes:""},
   {name:"Vital Aura",rank:"3",classes:"Guardian, Mystic, Savant",castTime:"Action",range:"Self (30ft sphere)",effect:"Conc, 1 min. Start of your turns: heal 2d6 to one creature in aura.",notes:""},
   {name:"Zalure",rank:"3",classes:"Mystic, Thaumaturge",castTime:"Action",range:"120 ft.",effect:"Conc, 1 min. Up to 6 in 40ft cube: WIS save or half speed, -2 DFP/DEX saves, limited actions.",notes:""},
@@ -161,7 +161,7 @@ const TECHNIQUES=[
   {name:"Gi-Zan",rank:"4",classes:"Guardian, Hunter, Thaumaturge",castTime:"Action",range:"60 ft.",effect:"DEX save: 5d10 physical or half in 20ft radius cylinder.",notes:"Boost: +1d10/rank"},
   {name:"Gi-Zonde",rank:"4",classes:"Hunter, Thaumaturge",castTime:"Action",range:"120 ft.",effect:"Conc, 1 min. 20ft sphere: 2d6 lightning. Sp. action: bolt 4d6 (adv if in sphere).",notes:"Boost: +1d6 both/rank"},
   {name:"Gravity Trap",rank:"4",classes:"Hunter",castTime:"Sp. Action",range:"60 ft.",effect:"Conc, 1 min. Melee tech atk: 4d8 phys + pull 30ft + grapple.",notes:"Boost: +1 grapple target/rank"},
-  {name:"Hinas",rank:"4",classes:"Guardian, Hunter, Thaumaturge",castTime:"10 min",range:"Self",effect:"8 hrs. Designate refuge; ritual to teleport up to 5 creatures \u22641000ft.",notes:"Comp: 500 mst"},
+  {name:"Hinas",rank:"4",classes:"Guardian, Hunter, Thaumaturge",castTime:"10 min",range:"Self",effect:"8 hrs. Designate refuge; ritual to teleport up to 5 creatures ≤1000ft.",notes:"Comp: 500 mst"},
   {name:"Jansa",rank:"4",classes:"Guardian, Hunter, Mystic, Savant",castTime:"Action",range:"Touch",effect:"1 hr. Ignore difficult terrain, immune to paralyzed/restrained. Swim speed.",notes:"Boost: +1 target/rank"},
   {name:"Medic Aura",rank:"4",classes:"Guardian, Savant",castTime:"Action",range:"Self (30ft sphere)",effect:"Conc, 10 min. Aura: max HP can't be reduced, resist necrotic, allies at 0 HP regain 1.",notes:""},
   {name:"Purity Aura",rank:"4",classes:"Guardian, Mystic, Savant",castTime:"Action",range:"Self (30ft sphere)",effect:"Conc, 10 min. Resist poison + adv vs blind/charm/deaf/fright/paralyze/poison/stun.",notes:""},
@@ -186,7 +186,7 @@ const TECHNIQUES=[
   {name:"Negatis",rank:"5",classes:"Esper Thaumaturge",castTime:"Action",range:"120 ft.",effect:"INT save: 8d6 psychic or half in 20ft sphere. Fail: subtract 1d6 from atk/checks/conc 1 min.",notes:""},
   {name:"Passage",rank:"5",classes:"Mystic, Thaumaturge",castTime:"Action",range:"30 ft.",effect:"1 hr. Create passage: up to 5ft wide, 8ft tall, 20ft deep.",notes:"Comp: 500 mst"},
   {name:"Protect Aura",rank:"5",classes:"Guardian, Mystic, Savant",castTime:"Action",range:"Self (30ft sphere)",effect:"Conc, 10 min. Adv saves vs techniques. Half-dmg saves become no-dmg on success.",notes:""},
-  {name:"Regen",rank:"5",classes:"Savant",castTime:"1 hr",range:"Touch",effect:"Revive dead \u226410 days with 1 HP. Neutralize poisons, close wounds. -4 penalty fades.",notes:"Comp: 5,000 mst"},
+  {name:"Regen",rank:"5",classes:"Savant",castTime:"1 hr",range:"Touch",effect:"Revive dead ≤10 days with 1 HP. Neutralize poisons, close wounds. -4 penalty fades.",notes:"Comp: 5,000 mst"},
   {name:"Repka",rank:"5",classes:"Thaumaturge",castTime:"Action",range:"Self",effect:"Conc, 1 hr. You become invisible + illusory double. Can move/control double.",notes:""},
   {name:"Ryuka",rank:"5",classes:"Guardian, Hunter, Thaumaturge",castTime:"1 min",range:"10 ft.",effect:"Portal to permanent teleport marker. Same planet only, outdoors only.",notes:"Comp: 500 mst"},
   {name:"Salvo Shot",rank:"5",classes:"Hunter",castTime:"Action",range:"150 ft.",effect:"40ft cylinder: DEX save: 8d8 force or half.",notes:"Req: ranged mastery weapon"},
@@ -196,16 +196,16 @@ const TECHNIQUES=[
   {name:"Na-Grafto",rank:"6",classes:"Thaumaturge",castTime:"Action",range:"90 ft.",effect:"STR save: 8d6 force + Slam (2d6+prone) or Throw (20ft+prone) in 30ft sphere.",notes:"Boost: +1d6 primary+slam/rank"},
   {name:"Na-Grants",rank:"6",classes:"Savant, Thaumaturge",castTime:"Action",range:"120 ft.",effect:"DEX save: 10d6 radiant or half in 40ft sphere.",notes:"Boost: +1d6/rank"},
   {name:"Na-Zonde",rank:"6",classes:"Thaumaturge",castTime:"Action",range:"150 ft.",effect:"DEX save: 10d8 lightning or half. Primary + 3 secondary within 30ft.",notes:"Boost: +1 secondary/rank"},
-  {name:"Petrify",rank:"6",classes:"Thaumaturge",castTime:"Action",range:"60 ft.",effect:"Conc, 1 min. CON save or restrained \u2192 petrified (3 fails). Robots immune.",notes:""},
+  {name:"Petrify",rank:"6",classes:"Thaumaturge",castTime:"Action",range:"60 ft.",effect:"Conc, 1 min. CON save or restrained → petrified (3 fails). Robots immune.",notes:""},
   {name:"Ra-Terr",rank:"6",classes:"Savant, Thaumaturge",castTime:"Action",range:"60 ft.",effect:"Conc, 1 min. WIS save or Dazed/Panicked/Sickened. New target each turn.",notes:""},
   {name:"Ravage",rank:"6",classes:"Savant",castTime:"Action",range:"60 ft.",effect:"CON save: 14d6 necrotic + reduce max HP by dmg dealt, or half.",notes:""},
   {name:"Sa-Gaj",rank:"6",classes:"Savant",castTime:"Action",range:"90 ft.",effect:"Conc, 10 min. Lightning wall (100ft line or 60ft ring). 6d10 lightning. Androids auto-fail.",notes:""},
   {name:"Truesight",rank:"6",classes:"Savant, Thaumaturge",castTime:"Action",range:"Touch",effect:"1 hr. Truesight 120ft.",notes:"Comp: 500 mst"},
   {name:"Corrupt",rank:"7",classes:"Savant, Thaumaturge",castTime:"Action",range:"60 ft.",effect:"CON save: 7d8+30 necrotic or half.",notes:""},
-  {name:"Do-Rever",rank:"7",classes:"Savant",castTime:"1 hr",range:"Touch",effect:"Revive dead \u2264100 yrs, full HP. Cures all. -4 penalty fades.",notes:"Comp: 10,000 mst"},
+  {name:"Do-Rever",rank:"7",classes:"Savant",castTime:"1 hr",range:"Touch",effect:"Revive dead ≤100 yrs, full HP. Cures all. -4 penalty fades.",notes:"Comp: 10,000 mst"},
   {name:"Folzanto",rank:"7",classes:"Thaumaturge",castTime:"Action",range:"150 ft.",effect:"DEX save: 7d10 fire or half. Up to ten 10ft cubes (contiguous).",notes:""},
   {name:"Fortify",rank:"7",classes:"Savant",castTime:"Action",range:"60 ft.",effect:"120 temp HP divided among up to 6 creatures.",notes:""},
-  {name:"Ra-Rimit",rank:"7",classes:"Thaumaturge",castTime:"Action",range:"100 ft.",effect:"1 hr. Invisible cube prison \u226410ft. Blocks matter/techniques. CHA save to teleport out.",notes:"Comp: 10,000 mst"},
+  {name:"Ra-Rimit",rank:"7",classes:"Thaumaturge",castTime:"Action",range:"100 ft.",effect:"1 hr. Invisible cube prison ≤10ft. Blocks matter/techniques. CHA save to teleport out.",notes:"Comp: 10,000 mst"},
   {name:"Restore",rank:"7",classes:"Savant",castTime:"1 min",range:"Touch",effect:"1 hr. Heal 4d8+15. Regen 1 HP/turn start. Regrow limbs in 2 min.",notes:""},
   {name:"Sa-Repka",rank:"7",classes:"Thaumaturge",castTime:"Action",range:"500 mi.",effect:"Conc, 1 day. Illusory double at seen location. See/hear through it. Intangible.",notes:"Comp: 1,000 mst"},
   {name:"Ward",rank:"7",classes:"Savant, Thaumaturge",castTime:"1 min",range:"Touch",effect:"Until dispelled/triggered. Glyph: Death/Discord/Fear/Pain/Sleep/Stunning.",notes:"Comp: 10,000 mst"},
@@ -216,9 +216,9 @@ const TECHNIQUES=[
   {name:"Ilshu",rank:"8",classes:"Savant, Thaumaturge",castTime:"Action",range:"Self (10ft sphere)",effect:"Conc, 1 hr. Anti-magic aura. No techniques/teleportation in area.",notes:""},
   {name:"Spirit Ward",rank:"8",classes:"Savant",castTime:"Action",range:"Touch",effect:"24 hrs. Immune psychic, can't be charmed. Undetectable by scrying/mind-reading.",notes:""},
   {name:"Telepathy",rank:"8",classes:"Thaumaturge",castTime:"Action",range:"Unlimited",effect:"24 hrs. Full telepathic link with familiar creature. Same planet.",notes:""},
-  {name:"Death",rank:"9",classes:"Savant, Thaumaturge",castTime:"Action",range:"60 ft.",effect:"Target \u2264100 HP: dies. Otherwise: 12d12 psychic.",notes:""},
+  {name:"Death",rank:"9",classes:"Savant, Thaumaturge",castTime:"Action",range:"60 ft.",effect:"Target ≤100 HP: dies. Otherwise: 12d12 psychic.",notes:""},
   {name:"Foresight",rank:"9",classes:"Thaumaturge",castTime:"1 min",range:"Touch",effect:"8 hrs. Adv on all atk/checks/saves. Enemies have disadv vs target.",notes:""},
-  {name:"Full Reverser",rank:"9",classes:"Savant",castTime:"1 hr",range:"Touch",effect:"Revive dead \u2264200 yrs from any cause, full HP. Provides new body if needed.",notes:"Comp: 40,000 mst"},
+  {name:"Full Reverser",rank:"9",classes:"Savant",castTime:"1 hr",range:"Touch",effect:"Revive dead ≤200 yrs from any cause, full HP. Provides new body if needed.",notes:"Comp: 40,000 mst"},
   {name:"Mind Spike",rank:"9",classes:"Thaumaturge",castTime:"Action",range:"90 ft.",effect:"Up to 10 targets: INT save: 14d6 psychic + stunned, or half.",notes:""},
   {name:"Ra-Resta",rank:"9",classes:"Savant",castTime:"Action",range:"60 ft.",effect:"Heal all HP. End charmed/frightened/paralyzed/poisoned/stunned. Can stand.",notes:""},
   {name:"Ra-Sar",rank:"9",classes:"Savant",castTime:"Action",range:"60 ft.",effect:"Restore up to 700 HP divided as chosen. Cure blind/deaf/poisoned.",notes:""},
@@ -226,12 +226,12 @@ const TECHNIQUES=[
 ];
 
 const ABILITIES=[
-  {name:"Regenerative Force",classPath:"Guardian",level:1,castTime:"Sp. Action",range:"Touch",effect:"Heal pool = 5\u00d7level. Touch to restore HP from pool. Spend 5 pts to cast Anti at 0 TP.",notes:"Pool refills on long rest"},
+  {name:"Regenerative Force",classPath:"Guardian",level:1,castTime:"Sp. Action",range:"Touch",effect:"Heal pool = 5×level. Touch to restore HP from pool. Spend 5 pts to cast Anti at 0 TP.",notes:"Pool refills on long rest"},
   {name:"Fury Strike",classPath:"Guardian",level:2,castTime:"Action",range:"30 ft.",effect:"Teleport to target + weapon attack. Hit: +2d8 spirit. Miss: 1d8 spirit.",notes:"2 uses/LR. Scales: dmg/uses increase"},
   {name:"Extra Attack",classPath:"Guardian",level:5,castTime:"Passive",range:"Self",effect:"Attack twice when taking Attack action.",notes:""},
   {name:"Tactical Awareness",classPath:"Guardian",level:6,castTime:"Passive",range:"10 ft.",effect:"You + allies in range: bonus to saves = CHA mod (min +1).",notes:"30ft at lv18"},
   {name:"Armament Mastery: Interpose Shield",classPath:"Guardian",level:9,castTime:"Reaction",range:"5 ft.",effect:"When ally within 5ft is attacked, impose disadvantage on the attack.",notes:"Requires shield"},
-  {name:"Armament Mastery: Shield Parry",classPath:"Guardian",level:9,castTime:"Reaction",range:"Self",effect:"DEX save for half dmg \u2192 take no dmg on success.",notes:"Requires shield"},
+  {name:"Armament Mastery: Shield Parry",classPath:"Guardian",level:9,castTime:"Reaction",range:"Self",effect:"DEX save for half dmg → take no dmg on success.",notes:"Requires shield"},
   {name:"Hold the Line",classPath:"Guardian",level:10,castTime:"Passive",range:"Self",effect:"Advantage on STR/DEX saves vs being knocked prone.",notes:""},
   {name:"Force of Spirit",classPath:"Guardian",level:11,castTime:"Passive",range:"Self",effect:"Melee weapon attacks deal extra 1d8 spirit damage.",notes:""},
   {name:"Advanced Combat Training: Defense",classPath:"Guardian",level:13,castTime:"Passive",range:"Self",effect:"While wearing armor: +1 Defense.",notes:"Choose one"},
@@ -242,8 +242,8 @@ const ABILITIES=[
   {name:"Valorous Assault",classPath:"Guardian",level:19,castTime:"Passive",range:"Self",effect:"+1 to STR/DEX/CHA. Mastery weapons ignore resistance. Reroll 1s and 2s on dmg dice.",notes:""},
   {name:"Spirit of Valor",classPath:"Champion",level:3,castTime:"Action (part)",range:"Self",effect:"Channel spirit energy into mastery weapon: +CHA mod to attack rolls for 10 min.",notes:"2 uses (3 at lv11). SR: regain 1"},
   {name:"Tactical Swiftness",classPath:"Champion",level:7,castTime:"Passive",range:"Self",effect:"Speed +10ft. Agility +2.",notes:""},
-  {name:"Undying Sentinel",classPath:"Champion",level:15,castTime:"Passive",range:"Self",effect:"At 0 HP: drop to 1 HP instead, regain 3\u00d7level HP.",notes:"1/LR"},
-  {name:"Legendary Hero",classPath:"Champion",level:20,castTime:"Sp. Action",range:"Self",effect:"10 min: adv CHA checks, reroll failed saves (reaction), miss \u2192 hit 1/turn.",notes:"1/LR or spend 10 TP"},
+  {name:"Undying Sentinel",classPath:"Champion",level:15,castTime:"Passive",range:"Self",effect:"At 0 HP: drop to 1 HP instead, regain 3×level HP.",notes:"1/LR"},
+  {name:"Legendary Hero",classPath:"Champion",level:20,castTime:"Sp. Action",range:"Self",effect:"10 min: adv CHA checks, reroll failed saves (reaction), miss → hit 1/turn.",notes:"1/LR or spend 10 TP"},
   {name:"Slayer's Mark",classPath:"Slayer",level:3,castTime:"Sp. Action",range:"30 ft.",effect:"Advantage on attacks vs target for 1 min or until 0 HP.",notes:"Uses = CHA mod. SR: 1, LR: all"},
   {name:"Relentless Avenger",classPath:"Slayer",level:7,castTime:"Passive",range:"Self",effect:"Opportunity attack hit: target speed = 0, you move half speed.",notes:""},
   {name:"Retribution",classPath:"Slayer",level:15,castTime:"Reaction",range:"Weapon range",effect:"When marked target attacks, make weapon attack against it.",notes:""},
@@ -269,7 +269,7 @@ const ABILITIES=[
   {name:"Steel Will",classPath:"Ranger",level:7,castTime:"Passive",range:"Self",effect:"Proficiency in WIS saves.",notes:""},
   {name:"Rapid Fire",classPath:"Ranger",level:11,castTime:"Passive",range:"Self",effect:"1/turn on ranged Attack: extra attacks vs creatures within 10ft of target.",notes:"Separate rolls, needs ammo"},
   {name:"Shifting Dodge",classPath:"Ranger",level:15,castTime:"Reaction",range:"Self",effect:"When attacked: impose disadvantage. Whether hit or miss, teleport 30ft.",notes:""},
-  {name:"Field Positioning: Breacher",classPath:"Vanguard",level:3,castTime:"Passive",range:"Self",effect:"1/turn: hit creature missing HP \u2192 +1d8 dmg (same type).",notes:"Swap on SR/LR"},
+  {name:"Field Positioning: Breacher",classPath:"Vanguard",level:3,castTime:"Passive",range:"Self",effect:"1/turn: hit creature missing HP → +1d8 dmg (same type).",notes:"Swap on SR/LR"},
   {name:"Field Positioning: Responder",classPath:"Vanguard",level:3,castTime:"Reaction",range:"Self",effect:"1/round: when creature misses you, make attack against it.",notes:"Swap on SR/LR"},
   {name:"Vanguard Weapon",classPath:"Vanguard",level:3,castTime:"Passive",range:"Self",effect:"Gain mastery with one melee weapon.",notes:""},
   {name:"Iron Will",classPath:"Vanguard",level:7,castTime:"Passive",range:"Self",effect:"Advantage on saves vs charmed/frightened.",notes:""},
@@ -282,16 +282,16 @@ const ABILITIES=[
   {name:"Rapid Strikes",classPath:"Mystic",level:2,castTime:"Sp. Action",range:"Self",effect:"2 attacks with light melee mastery weapon. 3 attacks at lv10.",notes:"Uses scale. Spend 4 TP for extra use"},
   {name:"Agile Movements: Sidestep",classPath:"Mystic",level:3,castTime:"Sp. Action",range:"Self",effect:"Disengage action.",notes:"Uses = WIS mod. SR/LR: all"},
   {name:"Agile Movements: Sprint",classPath:"Mystic",level:3,castTime:"Sp. Action",range:"Self",effect:"Dash action. Opp attacks have disadvantage.",notes:"Uses = WIS mod. SR/LR: all"},
-  {name:"Slow Fall",classPath:"Mystic",level:4,castTime:"Reaction",range:"Self",effect:"Reduce fall dmg by 5\u00d7level.",notes:"Trigger: falling"},
+  {name:"Slow Fall",classPath:"Mystic",level:4,castTime:"Reaction",range:"Self",effect:"Reduce fall dmg by 5×level.",notes:"Trigger: falling"},
   {name:"Extra Attack",classPath:"Mystic",level:5,castTime:"Passive",range:"Self",effect:"Attack twice when taking Attack action.",notes:""},
   {name:"Two-Weapon Fighting",classPath:"Mystic",level:5,castTime:"Passive",range:"Self",effect:"Add ability mod to light weapon bonus attack damage.",notes:""},
-  {name:"Evasion",classPath:"Mystic",level:7,castTime:"Passive",range:"Self",effect:"DEX save for half \u2192 no dmg on success, half on fail.",notes:""},
+  {name:"Evasion",classPath:"Mystic",level:7,castTime:"Passive",range:"Self",effect:"DEX save for half → no dmg on success, half on fail.",notes:""},
   {name:"Heightened Senses",classPath:"Mystic",level:9,castTime:"Passive",range:"Self",effect:"Blindsight 10ft.",notes:""},
   {name:"Improved Rapid Strikes",classPath:"Mystic",level:10,castTime:"Passive",range:"Self",effect:"Rapid Strikes: 3 attacks instead of 2.",notes:""},
   {name:"Self-Restoration",classPath:"Mystic",level:10,castTime:"Passive",range:"Self",effect:"End of each turn: remove charmed, frightened, or poisoned from self.",notes:""},
   {name:"Hard to Hold",classPath:"Mystic",level:13,castTime:"Passive",range:"Self",effect:"Adv saves vs grapple/prone. Grappled: no disadv on attacks. Grappler takes DEX mod dmg/turn.",notes:""},
   {name:"Mental Training",classPath:"Mystic",level:14,castTime:"Passive",range:"Self",effect:"Proficiency in INT or WIS saves (choose).",notes:""},
-  {name:"Second Chances",classPath:"Mystic",level:15,castTime:"Passive",range:"Self",effect:"0 fate points at initiative \u2192 regain 2.",notes:""},
+  {name:"Second Chances",classPath:"Mystic",level:15,castTime:"Passive",range:"Self",effect:"0 fate points at initiative → regain 2.",notes:""},
   {name:"Phase Rush",classPath:"Mystic",level:18,castTime:"Passive",range:"Self",effect:"1/turn: spend half movement to teleport half speed.",notes:""},
   {name:"Quick Recovery: Last Stand",classPath:"Mystic",level:19,castTime:"Passive",range:"Self",effect:"At 0 HP: drop to 1, regain half max HP.",notes:"1/LR"},
   {name:"Quick Recovery: Recover Vitality",classPath:"Mystic",level:19,castTime:"Sp. Action",range:"Self",effect:"Pool of 10d10. Expend dice, roll, regain HP = total.",notes:"Refills on LR"},
@@ -301,7 +301,7 @@ const ABILITIES=[
   {name:"Tactical Strikes: Topple",classPath:"Skirmisher",level:3,castTime:"Passive",range:"Self",effect:"On Rapid Strikes hit: DEX save or knocked prone.",notes:"Choose 1 per hit"},
   {name:"Rejuvenation",classPath:"Skirmisher",level:6,castTime:"Sp. Action",range:"Self",effect:"Regain HP = half level + WIS mod.",notes:"Uses = WIS mod. LR: all"},
   {name:"Fleet Step",classPath:"Skirmisher",level:11,castTime:"Passive",range:"Self",effect:"Rapid Strikes: can also Dash or Disengage as part of same sp. action.",notes:""},
-  {name:"Lethal Accuracy",classPath:"Skirmisher",level:17,castTime:"Passive",range:"Self",effect:"1/turn: miss with mastery weapon \u2192 reroll attack, must use new roll.",notes:""},
+  {name:"Lethal Accuracy",classPath:"Skirmisher",level:17,castTime:"Passive",range:"Self",effect:"1/turn: miss with mastery weapon → reroll attack, must use new roll.",notes:""},
   {name:"Healing Touch",classPath:"Warder",level:3,castTime:"Sp. Action",range:"Touch",effect:"Expend 1 Rapid Strikes use: heal 1d8+WIS. 1d10 at 11, 1d12 at 16.",notes:""},
   {name:"Medic Training",classPath:"Warder",level:3,castTime:"Passive",range:"Self",effect:"+2 ranks Insight, +2 ranks Medicine.",notes:""},
   {name:"Spirit Weapon",classPath:"Warder",level:3,castTime:"Passive",range:"Self",effect:"1/turn on mastery weapon hit: spend 4 TP for 1d8+WIS spirit dmg. 1d10 at 11, 1d12 at 16.",notes:""},
@@ -319,7 +319,7 @@ const ABILITIES=[
   {name:"Uncanny Dodge",classPath:"Operative",level:5,castTime:"Reaction",range:"Self",effect:"When hit by attack you can see: halve damage.",notes:""},
   {name:"Improved Mastery: Dual Wielding",classPath:"Operative",level:6,castTime:"Passive",range:"Self",effect:"Add ability mod to light weapon bonus attack.",notes:"Choose one"},
   {name:"Improved Mastery: Point Shooting",classPath:"Operative",level:6,castTime:"Passive",range:"Self",effect:"No disadvantage on ranged attacks within 5ft.",notes:"Choose one"},
-  {name:"Evasion",classPath:"Operative",level:7,castTime:"Passive",range:"Self",effect:"DEX save for half \u2192 no dmg on success, half on fail.",notes:""},
+  {name:"Evasion",classPath:"Operative",level:7,castTime:"Passive",range:"Self",effect:"DEX save for half → no dmg on success, half on fail.",notes:""},
   {name:"Reliable Talent",classPath:"Operative",level:7,castTime:"Passive",range:"Self",effect:"Skill/tool check with ranks: treat d20 roll 9 or lower as 10.",notes:""},
   {name:"Restricted Item Use",classPath:"Operative",level:10,castTime:"Passive",range:"Self",effect:"Can use caster kits and caster-only items.",notes:""},
   {name:"Speedy",classPath:"Operative",level:10,castTime:"Passive",range:"Self",effect:"+10ft speed. Dash ignores difficult terrain. Opp attacks have disadv.",notes:""},
@@ -329,8 +329,8 @@ const ABILITIES=[
   {name:"Devious Strikes: Obscure",classPath:"Operative",level:14,castTime:"Passive",range:"Self",effect:"Forgo 3d6 SA: DEX save or blinded until end of next turn.",notes:""},
   {name:"Slippery Mind",classPath:"Operative",level:15,castTime:"Passive",range:"Self",effect:"Proficiency in WIS and CHA saves.",notes:""},
   {name:"Elusive",classPath:"Operative",level:18,castTime:"Passive",range:"Self",effect:"No attack can have advantage against you.",notes:"Unless incapacitated"},
-  {name:"Master of Fates",classPath:"Operative",level:19,castTime:"Passive",range:"Self",effect:"+1 DEX/INT/CHA. SR: regain 3 fate. Fate dice: 4 or lower = 5. Reaction: 2 fate \u2192 disadv on enemy roll.",notes:""},
-  {name:"Stroke of Luck",classPath:"Operative",level:20,castTime:"Passive",range:"Self",effect:"Miss/fail check/fail save \u2192 turn roll into 20.",notes:"1/SR or LR"},
+  {name:"Master of Fates",classPath:"Operative",level:19,castTime:"Passive",range:"Self",effect:"+1 DEX/INT/CHA. SR: regain 3 fate. Fate dice: 4 or lower = 5. Reaction: 2 fate → disadv on enemy roll.",notes:""},
+  {name:"Stroke of Luck",classPath:"Operative",level:20,castTime:"Passive",range:"Self",effect:"Miss/fail check/fail save → turn roll into 20.",notes:"1/SR or LR"},
   {name:"Interrogator",classPath:"Investigator",level:3,castTime:"Passive",range:"Self",effect:"Insight to detect lies: d20 roll 7 or lower = 8. On success: same benefit on Intimidation/Persuasion.",notes:""},
   {name:"Keen Eye",classPath:"Investigator",level:3,castTime:"Sp. Action",range:"Self",effect:"Investigation check for clues or Perception check for hidden creatures/objects.",notes:""},
   {name:"Vigilant Tactics",classPath:"Investigator",level:3,castTime:"Sp. Action",range:"Self",effect:"Target creature: disadv on next weapon attack vs you. If miss: you get adv on next attack vs it.",notes:"Uses = INT mod. SR:1, LR: all"},
@@ -342,7 +342,7 @@ const ABILITIES=[
   {name:"Fast Hands: Sleight of Hand",classPath:"Thief",level:3,castTime:"Sp. Action",range:"Self",effect:"Disarm trap, pick lock, pick pocket.",notes:""},
   {name:"Fast Hands: Use an Object",classPath:"Thief",level:3,castTime:"Sp. Action",range:"Self",effect:"Take Use action or Cast action for an item.",notes:""},
   {name:"Second-Story Work",classPath:"Thief",level:3,castTime:"Passive",range:"Self",effect:"Climb speed = your speed. Jump distance uses DEX instead of STR.",notes:""},
-  {name:"Stealth Mastery",classPath:"Thief",level:9,castTime:"Passive",range:"Self",effect:"Advantage on Stealth if moving \u2264 half speed.",notes:""},
+  {name:"Stealth Mastery",classPath:"Thief",level:9,castTime:"Passive",range:"Self",effect:"Advantage on Stealth if moving ≤ half speed.",notes:""},
   {name:"Active Cloaking",classPath:"Thief",level:13,castTime:"Passive",range:"Self",effect:"Hide via Cunning Action: become invisible (as Conceal). 1 min / concentration.",notes:"Ends on attack/cast"},
   {name:"Supreme Reflexes",classPath:"Thief",level:17,castTime:"Passive",range:"Self",effect:"Two turns in first round of combat. 2nd turn at initiative - 10.",notes:""},
   {name:"Savant Specialty: Protector",classPath:"Savant",level:1,castTime:"Passive",range:"Self",effect:"Gain proficiency with axes, bows, swords. +1 weapon mastery.",notes:"Choose one"},
@@ -350,13 +350,13 @@ const ABILITIES=[
   {name:"Technical Talent: Bio-manipulation",classPath:"Savant",level:2,castTime:"Action",range:"30 ft.",effect:"Roll 1d8+WIS: heal target or CON save for necrotic dmg (half on save).",notes:"2 uses. Scales: 2d8 at 5, 3d8 at 11, 4d8 at 18"},
   {name:"Technical Talent: Electro-pulse",classPath:"Savant",level:2,castTime:"Action",range:"30 ft.",effect:"Automatons/Robots: WIS save or incapacitated 1 min.",notes:"Scales: +force dmg at lv5"},
   {name:"Charged Attacks: Imbued Strikes",classPath:"Savant",level:7,castTime:"Passive",range:"Self",effect:"1/turn on weapon hit: +1d8 necrotic or spirit. 2d8 at lv14.",notes:"Choose one"},
-  {name:"Charged Attacks: Potent Casting",classPath:"Savant",level:7,castTime:"Passive",range:"Self",effect:"Add WIS mod to prime technique dmg. At 14: also grant 2\u00d7WIS temp HP to ally within 60ft.",notes:"Choose one"},
+  {name:"Charged Attacks: Potent Casting",classPath:"Savant",level:7,castTime:"Passive",range:"Self",effect:"Add WIS mod to prime technique dmg. At 14: also grant 2×WIS temp HP to ally within 60ft.",notes:"Choose one"},
   {name:"Item Potency",classPath:"Savant",level:9,castTime:"Passive",range:"Self",effect:"Consumable HP/TP die rolls: treat 2 or lower as 3.",notes:""},
   {name:"Power from Within",classPath:"Savant",level:10,castTime:"Action",range:"Self",effect:"Cast any savant tech rank 5 or lower (even unknown) at 0 TP, no components.",notes:"1/LR. Rank 6+ at lv20 (cooldown)"},
-  {name:"Mental Ward",classPath:"Savant",level:18,castTime:"Passive",range:"Self",effect:"Fail INT/WIS/CHA save \u2192 succeed instead.",notes:"1/SR or LR"},
+  {name:"Mental Ward",classPath:"Savant",level:18,castTime:"Passive",range:"Self",effect:"Fail INT/WIS/CHA save → succeed instead.",notes:"1/SR or LR"},
   {name:"Master Savant",classPath:"Savant",level:19,castTime:"Passive",range:"Self",effect:"+1 ability. Resist 2 dmg types (choose on LR).",notes:""},
   {name:"Supreme Power",classPath:"Savant",level:20,castTime:"Passive",range:"Self",effect:"Power from Within: rank 6+. Cooldown = 8 - WIS mod days.",notes:""},
-  {name:"Field Medic",classPath:"Doctor",level:3,castTime:"Sp. Action",range:"30 ft.",effect:"Spend 1 Technical Talent use: heal 5\u00d7level HP divided among creatures below half HP.",notes:"Can't heal above half"},
+  {name:"Field Medic",classPath:"Doctor",level:3,castTime:"Sp. Action",range:"30 ft.",effect:"Spend 1 Technical Talent use: heal 5×level HP divided among creatures below half HP.",notes:"Can't heal above half"},
   {name:"Healing Expertise",classPath:"Doctor",level:3,castTime:"Passive",range:"Self",effect:"Healing techniques rank 1+: target regains extra HP = 2 + technique rank.",notes:""},
   {name:"Improved Healing Expertise",classPath:"Doctor",level:6,castTime:"Passive",range:"Self",effect:"After healing others with rank 1+ tech: you regain HP = 2 + technique rank.",notes:""},
   {name:"Master Medic",classPath:"Doctor",level:17,castTime:"Passive",range:"Self",effect:"Healing dice from techs/Technical Talent: use max value instead of rolling.",notes:""},
@@ -390,9 +390,9 @@ const ABILITIES=[
   {name:"Combat Training: Blind Fighting",classPath:"Warrior",level:7,castTime:"Passive",range:"Self",effect:"Blindsight 10ft.",notes:"Choose one"},
   {name:"Combat Training: Defense",classPath:"Warrior",level:7,castTime:"Passive",range:"Self",effect:"While wearing armor: +1 Defense.",notes:"Choose one"},
   {name:"Combat Training: Weapon Expertise",classPath:"Warrior",level:7,castTime:"Passive",range:"Self",effect:"One mastery weapon: +2 attack power.",notes:"Choose one"},
-  {name:"Indomitable",classPath:"Warrior",level:9,castTime:"Passive",range:"Self",effect:"Fail save \u2192 reroll with +level bonus. 2 uses at 13, 3 at 17.",notes:"1/LR per use"},
+  {name:"Indomitable",classPath:"Warrior",level:9,castTime:"Passive",range:"Self",effect:"Fail save → reroll with +level bonus. 2 uses at 13, 3 at 17.",notes:"1/LR per use"},
   {name:"Two Extra Attacks",classPath:"Warrior",level:11,castTime:"Passive",range:"Self",effect:"Attack 3 times on Attack action.",notes:""},
-  {name:"Studied Attacks",classPath:"Warrior",level:13,castTime:"Passive",range:"Self",effect:"Miss \u2192 advantage on next attack vs that creature before end of next turn.",notes:""},
+  {name:"Studied Attacks",classPath:"Warrior",level:13,castTime:"Passive",range:"Self",effect:"Miss → advantage on next attack vs that creature before end of next turn.",notes:""},
   {name:"Additional Combat Training",classPath:"Warrior",level:14,castTime:"Passive",range:"Self",effect:"Gain second Combat Training benefit.",notes:""},
   {name:"Battle Mastery",classPath:"Warrior",level:19,castTime:"Passive",range:"Self",effect:"+1 ability. +40 max HP. When healing: +CON mod extra HP (1/turn).",notes:""},
   {name:"Three Extra Attacks",classPath:"Warrior",level:20,castTime:"Passive",range:"Self",effect:"Attack 4 times on Attack action.",notes:""},
@@ -453,13 +453,13 @@ function makeCard(headerLeft,headerRight,rows,notes){
   card.className='result-card';
   const rowsHTML=rows.map(([l,v])=>`<div class="result-row"><span class="result-label">${l}</span><span class="result-value">${v}</span></div>`).join('');
   const notesHTML=notes?`<div class="result-notes">${notes}</div>`:'';
-  card.innerHTML=`<div class="result-header"><span class="result-name">${headerLeft}</span><span class="result-sub">${headerRight}</span><button class="close-btn" title="Dismiss">\u2715</button></div><div class="result-body">${rowsHTML}${notesHTML}</div>`;
+  card.innerHTML=`<div class="result-header"><span class="result-name">${headerLeft}</span><span class="result-sub">${headerRight}</span><button class="close-btn" title="Dismiss">✕</button></div><div class="result-body">${rowsHTML}${notesHTML}</div>`;
   card.querySelector('.close-btn').addEventListener('click',()=>card.remove());
   return card;
 }
 
 function renderTech(t){return makeCard(t.name,rankLabel(t.rank),[['Classes',t.classes],['Cast Time',t.castTime],['Range',t.range],['Effect',t.effect]],t.notes);}
-function renderAbility(a){return makeCard(a.name,`${a.classPath} \u00b7 Lv ${a.level}`,[['Cast Time',a.castTime],['Range',a.range],['Effect',a.effect]],a.notes);}
+function renderAbility(a){return makeCard(a.name,`${a.classPath} · Lv ${a.level}`,[['Cast Time',a.castTime],['Range',a.range],['Effect',a.effect]],a.notes);}
 
 function doSearch(query){
   const q=query.trim().toLowerCase();
