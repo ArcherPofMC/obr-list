@@ -1,9 +1,9 @@
 {
-  "name": "Technique Search",
-  "version": "1.0.0",
+  "name": "PS Rules Lookup",
+  "version": "1.3.1",
   "manifest_version": 1,
   "action": {
-    "title": "Technique Search",
+    "title": "Rules Lookup",
     "icon": "https://archerpofmc.github.io/obr-list/icon.svg",
     "popover": "https://archerpofmc.github.io/obr-list/index.html",
     "height": 560,
