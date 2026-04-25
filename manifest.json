@@ -4,8 +4,8 @@
   "manifest_version": 1,
   "action": {
     "title": "Technique Search",
-    "icon": "/icon.svg",
-    "popover": "/index.html",
+    "icon": "icon.svg",
+    "popover": "index.html",
     "height": 560,
     "width": 400
   }
